@@ -11,6 +11,9 @@ public class PlayerKeyboardInput : MonoBehaviour, IMoveInput
         float v = Input.GetAxisRaw("Vertical");
 
         Move = Vector2.ClampMagnitude(new Vector2(h, v), 1f);
-        Run = Input.GetKey(KeyCode.LeftShift);
+        
+        // 両Shift対応
+        Run = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
     }
 }
