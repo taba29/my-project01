@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int remainingEnemies;
+
     void Start()
     {
-        
+        UpdateEnemyCount();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (remainingEnemies > 0)
+        {
+            UpdateEnemyCount();
+
+            if (remainingEnemies == 0)
+            {
+                OnGameClear();
+            }
+        }
+    }
+
+    void UpdateEnemyCount()
+    {
+        remainingEnemies = FindObjectsByType<EnemyChase>(FindObjectsSortMode.None).Length;
+    }
+
+    void OnGameClear()
+    {
+        Debug.Log("Game Clear!");
     }
 }
