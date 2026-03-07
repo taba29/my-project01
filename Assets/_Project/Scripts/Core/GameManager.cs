@@ -1,34 +1,40 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int remainingEnemies;
+    [SerializeField] private EnemySpawner enemySpawner;
+    [SerializeField] private float respawnDelay = 3f;
 
-    void Start()
-    {
-        UpdateEnemyCount();
-    }
+    private bool isRespawning = false;
 
     void Update()
     {
-        if (remainingEnemies > 0)
-        {
-            UpdateEnemyCount();
+        EnemyHealth[] enemies = FindObjectsByType<EnemyHealth>(FindObjectsSortMode.None);
 
-            if (remainingEnemies == 0)
-            {
-                OnGameClear();
-            }
+        if (enemies.Length == 0 && !isRespawning)
+        {
+            StartCoroutine(RespawnEnemies());
         }
     }
 
-    void UpdateEnemyCount()
+    IEnumerator RespawnEnemies()
     {
-        remainingEnemies = FindObjectsByType<EnemyChase>(FindObjectsSortMode.None).Length;
-    }
+        isRespawning = true;
 
-    void OnGameClear()
-    {
-        Debug.Log("Game Clear!");
+        Debug.Log("All enemies defeated. Respawn in " + respawnDelay + " sec");
+
+        yield return new WaitForSeconds(respawnDelay);
+
+        if (enemySpawner != null)
+        {
+            enemySpawner.SpawnEnemies();
+        }
+        else
+        {
+            Debug.LogWarning("GameManager: enemySpawner is not assigned.");
+        }
+
+        isRespawning = false;
     }
 }

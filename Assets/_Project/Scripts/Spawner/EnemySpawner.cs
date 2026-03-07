@@ -32,6 +32,12 @@ public class EnemySpawner : MonoBehaviour
             {
                 chase.SetTarget(player);
             }
+
+            EnemyAttack attack = enemy.GetComponent<EnemyAttack>();
+            if (attack != null && player != null)
+            {
+                attack.SetTarget(player);
+            }
         }
     }
 }
