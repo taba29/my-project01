@@ -25,4 +25,9 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player Dead");
     }
+
+    public int GetCurrentHp()
+{
+    return currentHp;
+}
 }

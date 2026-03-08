@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  attackRange: 1.5
+  attackRange: 2
   attackInterval: 1
 --- !u!114 &5428973002199617207
 MonoBehaviour:
