@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int hp = 1;
     [SerializeField] private GameObject deathFX;
+    [SerializeField] private AudioClip deathSE;
 
     private Renderer r;
     private Color originalColor;
@@ -72,6 +73,15 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             Debug.LogWarning("deathFX is null");
+        }
+
+        if (deathSE != null)
+        {
+            AudioSource.PlayClipAtPoint(deathSE, transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("deathSE is null");
         }
 
         Destroy(gameObject);

@@ -155,3 +155,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   deathFX: {fileID: 803613433573373690, guid: ec935b6ba27d64bacaefe9624c37dd29, type: 3}
+  deathSE: {fileID: 8300000, guid: f2d1ee677020440c1a17d63d0c37de30, type: 3}
