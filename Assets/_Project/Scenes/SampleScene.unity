@@ -823,6 +823,10 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  hitSE: {fileID: 8300000, guid: c7d0cb0d984ff4ac58be2beaf8665015, type: 3}
+  hitFX: {fileID: 0}
+  fxHeight: 1
+  fxForwardOffset: 0.3
 --- !u!114 &1340167464
 MonoBehaviour:
   m_ObjectHideFlags: 0
