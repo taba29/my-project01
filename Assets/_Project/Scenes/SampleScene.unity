@@ -823,10 +823,17 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  hitSE: {fileID: 8300000, guid: c7d0cb0d984ff4ac58be2beaf8665015, type: 3}
-  hitFX: {fileID: 0}
+  attackSE: {fileID: 8300000, guid: c7d0cb0d984ff4ac58be2beaf8665015, type: 3}
+  attackFX: {fileID: 3156866507962234106, guid: 645ebd7cef59b7b40b27c29bf3e99cf2, type: 3}
+  attackPoint: {fileID: 0}
+  attackFXLifeTime: 1
+  hitSE: {fileID: 8300000, guid: a3fe9babaec9241db85bab9698e6e533, type: 3}
+  hitFX: {fileID: 8500920156052182585, guid: 830e92a3f95c4b04caf8edd648aed9bd, type: 3}
   fxHeight: 1
   fxForwardOffset: 0.3
+  hitFXLifeTime: 2
+  animator: {fileID: 0}
+  attackTriggerName: Attack
 --- !u!114 &1340167464
 MonoBehaviour:
   m_ObjectHideFlags: 0
