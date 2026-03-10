@@ -832,7 +832,7 @@ MonoBehaviour:
   fxHeight: 1
   fxForwardOffset: 0.3
   hitFXLifeTime: 2
-  animator: {fileID: 0}
+  animator: {fileID: 1340167444}
   attackTriggerName: Attack
 --- !u!114 &1340167464
 MonoBehaviour:
